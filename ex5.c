@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+void swap(int,int);
 /* function declaration */
 void swap(int &a, int &b) 
 {
