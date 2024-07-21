@@ -1,5 +1,5 @@
 #include<stdio.h>
-int* myf(char *str){
+int* myf(char str[]){
     int i=0;
     while(str[i]!='\0'){
         if(str[i]=='a')
@@ -9,7 +9,7 @@ int* myf(char *str){
     return str;
 }
 int main(){
-    char str="prepinsta";
+    char str[]="prepinsta";
     int* p;
     p=myf(str);
     printf("%s",p);
