@@ -21,7 +21,7 @@ void stockSpan(int arr[], int size) {
 
 int main()
 {
-    int arr[] = {100, 20, 30, 60, 38, 36, 32, 55, 80, 50, 120};
+    int arr[] = {100, 20, 30, 60, 40, 36, 55, 80, 50, 120};
     int size = sizeof(arr) / sizeof(arr[0]);
     stockSpan(arr, size);
     return 0;
