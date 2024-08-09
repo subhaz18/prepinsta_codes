@@ -4,7 +4,7 @@ struct node
 {
     int num;
     node *nextptr;
-};node* stnode = nullptr // Initialize stnode to nullptrvoid make(int n)
+};node* stnode = nullptr; // Initialize stnode to nullptrvoid make(int n)
 {
     node *frntNode, *tmp;
     int num, i;
