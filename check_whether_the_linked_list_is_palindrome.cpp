@@ -69,7 +69,7 @@ void make (int n)			//function to create linked list.
 	      tmp = tmp->nextptr;
 	    }
 	}
-    }
+    }//testing
 }
 
 void display ()			//function to diplay linked list
