@@ -41,6 +41,7 @@ int main() {
 	root->left->left=new Node(30);
 	root->left->right=new Node(40);
 	root->right->right=new Node(70);
+    root->right->right->right=new Node(10);
 	leftview(root);
     printleftview();
 }
