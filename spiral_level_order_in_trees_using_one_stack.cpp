@@ -2,63 +2,52 @@
 using namespace std;
 struct Node
 {
-  int key;
+  int data;
   Node *left, *right;
 
     Node (int key)
   {
-    this->key = key;
+    this->data = key;
     this->left = this->right = nullptr;
   }
 };
 
-bool printLevelLeftToRight (Node * root, int level)
-{
-  if (root == nullptr)
-    {
-      return false;
-    }
-
-  if (level == 1)
-    {
-      cout << root->key << " ";
-      return true;
-    }
-
-  bool left = printLevelLeftToRight (root->left, level - 1);
-  bool right = printLevelLeftToRight (root->right, level - 1);
-
-  return left || right;
-}
-
-bool printLevelRightToLeft (Node * root, int level)
-{
-  if (root == nullptr)
-    {
-      return false;
-    }
-
-  if (level == 1)
-    {
-      cout << root->key << " ";
-      return true;
-    }
-
-  bool right = printLevelRightToLeft (root->right, level - 1);
-  bool left = printLevelRightToLeft (root->left, level - 1);
-
-  return right || left;
-}
-
 void spiralOrderTraversal (Node * root)
 {
-  if (root == nullptr)
-    {
-      return;
+  if (root == NULL){
+    return;
+  }
+  queue<Node*> q;
+  stack<Node*>s;
+  q.push(root);
+  bool left_to_right=true;
+  while(!q.empty()){
+    int n=q.size();
+    for(int i=0;i<n;i++){
+      Node* temp=q.front();
+      q.pop();
+      if(left_to_right)
+      cout<<temp->data<<" ";
+      else
+      s.push(temp);
+      if(temp->left!=NULL){
+        q.push(temp->left);
+      }
+      if(temp->right!=NULL){
+        q.push(temp->right);
+      }
     }
-  int level = 1;
-  while (printLevelLeftToRight (root, level++) &&
-	 printLevelRightToLeft (root, level++));
+    if(left_to_right==false){
+      while(!s.empty()){
+        Node*t=s.top();
+        cout<<t->data<<" ";
+        s.pop();
+      }
+    }
+    left_to_right=!left_to_right;
+
+  }
+
 }
 
 int main ()
