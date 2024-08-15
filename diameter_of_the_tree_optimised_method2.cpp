@@ -11,24 +11,18 @@ struct Node
     this->left = this->right = nullptr;
   }
 };
-int height(Node*root){
+int max_dia=0;
+int height_dia(Node* root){
     if(root==NULL){
         return 0;
     }
-    else{
-        return (1+max(height(root->left),height(root->right)));
-    }
-}
-int diameter(Node* root){
-    if(root==NULL){
-        return 0;
-    }
-    int pdiam=1+height(root->left)+height(root->right);
-    int ldiam=diameter(root->left);
-    int rdiam=diameter(root->right);
+    int lheight=height_dia(root->left);
+    int rheight=height_dia(root->right);
+
+    max_dia=max(max_dia,1+lheight+rheight);
 
 
-    return max(pdiam,max(ldiam,rdiam));
+    return 1+max(lheight,rheight);
 }
 
 
@@ -46,8 +40,8 @@ int main ()
   root->left->right->right->right = new Node (10);
 
 
-  int dia=diameter(root);
-  cout<<"the diameter if the tree is :"<<dia;
+  height_dia(root);
+  cout<<"the diameter if the tree is :"<<max_dia;
 
   return 0;
 }
