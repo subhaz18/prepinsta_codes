@@ -42,7 +42,6 @@ if(left_lca&&right_lca){
 
 return (left_lca!=NULL)?left_lca:right_lca;
 
-
 }
 
 int main() {
