@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int getunion(int *arr,int *arr1 , int n,int m,vector<int> &result) {
+int getunion(int arr[],int arr1[] , int n,int m,vector<int> &result) {
 
     for (int i = 0; i < n; i++) {
         int flag = 0;
@@ -37,10 +37,7 @@ int getunion(int *arr,int *arr1 , int n,int m,vector<int> &result) {
         // The continue keyword is used to end the current iteration
         // in a for loop (or a while loop), and continues to the next iteration
         if (flag == 0){
-            if( (std::find(result.begin(), result.end(), arr1[i]) != result.end())==1){
-                break;
-            }
-            else{
+            if( (std::find(result.begin(), result.end(), arr1[i]) == result.end())){
                 result.push_back(arr1[i]);
             }
         }
@@ -56,11 +53,11 @@ int main()
     int arr[] = {5, 8, 5, 7, 8, 10,15};
     int size = sizeof(arr) / sizeof(arr[0]);
     int arr1[] = {1,5,5,8,1,8,7,13};
-    int size1 = sizeof(arr) / sizeof(arr[0]);
+    int size1 = sizeof(arr1) / sizeof(arr1[0]);
     vector<int> result;
     getunion(arr,arr1, size,size1,result);
-    for(auto x:result){
-        cout<<x<<" ";
+    for(auto it=result.begin();it!=result.end();it++){
+        cout<<*it<<" ";
     }
     return 0;
 }
