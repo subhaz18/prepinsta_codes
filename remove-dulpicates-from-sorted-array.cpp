@@ -19,7 +19,7 @@ int removeduplicates(int arr1[], int n)
 
     return j;
 }
-
+//o(n)
 int main()
 {
     int arr1[] = {1,1,1,2,2,2,3,3,4,4};

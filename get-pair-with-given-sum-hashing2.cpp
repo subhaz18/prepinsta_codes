@@ -8,7 +8,7 @@ int main(){
     unordered_set<int> set;
     for(int i=0;i<n;i++){
         if(set.find(sum-arr[i])!=set.end()){
-            cout<<arr[i]<<","<<sum-arr[i]<<endl;
+            cout<<arr[i]<<","<<sum-arr[i]<<endlṆ;
         }
         set.insert(arr[i]);
     }
