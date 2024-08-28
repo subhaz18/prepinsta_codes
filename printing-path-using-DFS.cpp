@@ -26,14 +26,16 @@ void graph :: newedge(int start,int e){
 }
 int graph ::dfs_path_print(int start,bool *visited,int end,vector<int> &arr){
     visited[start]=true;
+    arr.push_back(start);
+    if(start==end){
+        return 1;
+    }
     for(int i=0;i<v;i++){
         if(adj[start][i]==1 && !(visited[i])){
-
-            if(i==end){
-                arr.push_back(i);
-                dfs_path_print(end,visited,end-1,arr);
-               // return 1;
+            if(dfs_path_print(i,visited,end,arr)){
+                return 1;
             }
+            
         }
     }
 }
