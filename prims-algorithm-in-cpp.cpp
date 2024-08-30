@@ -30,9 +30,9 @@ void primsMst(int graph[v][v]){
         int u = min_key(key,mst_set);
         mst_set[u]=true;
         for(int i=0;i<v;i++){
-            if(graph[u][i] && mst_set[i] == false && graph[u][v]<key[v]){
-                parent[v]=u;
-                key[v]=graph[u][v];
+            if(graph[u][i] && mst_set[i] == false && graph[u][i]<key[i]){
+                parent[i]=u;
+                key[i]=graph[u][i];
             }
         }
     }
